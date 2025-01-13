@@ -1,4 +1,4 @@
-# Command Executor
+# LogFusion
 
 ## Overview
 This project is a Python-based command execution tool with live spinner animations, real-time log display, and result handling. It is designed to execute a series of shell commands and provide an interactive and visually appealing terminal interface.
