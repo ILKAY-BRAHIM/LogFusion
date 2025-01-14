@@ -1,76 +1,65 @@
+
 # LogFusion
 
 ## Overview
-This project is a Python-based command execution tool with live spinner animations, real-time log display, and result handling. It is designed to execute a series of shell commands and provide an interactive and visually appealing terminal interface.
+LogFusion is a Python-based command execution tool that combines live spinner animations, real-time log display, and result handling. This tool allows you to execute shell commands with a visually engaging terminal interface.
 
 ## Features
 - Executes multiple shell commands sequentially.
 - Displays real-time logs of command outputs.
 - Shows a live spinner animation for the current running command.
-- Color-coded messages for success and failure statuses.
+- Provides color-coded messages for success and failure statuses.
 
 ## Requirements
 - Python 3.7+
 - Compatible with Linux, macOS, and Windows (with proper terminal support).
 
-## Dependencies
-The project requires the following Python libraries:
+## Installation
+Install LogFusion directly from PyPI:
 
-```plaintext
-colorama==0.4.6
+```bash
+pip install LogFusion
 ```
 
-
-
-## Installation
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/ILKAY-BRAHIM/LogFusion.git
-   cd LogFusion
-   ```
-
-2. Install the required Python dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ## Usage
-1. Edit the `commands` list in `main.py` to include the shell commands you want to execute.
+Run shell commands with LogFusion as follows:
 
-   Example:
-   ```python
-   commands = [
-       "curl -s https://example.com/script.sh | bash",
-       "echo 'Hello, World!'",
-   ]
-   ```
+```bash
+LogFusion "echo 'Hello, World!'" "ls -l"
+```
 
-2. Run the script:
+LogFusion will execute each command sequentially, displaying real-time logs and animations in the terminal.
 
-   ```bash
-   python main.py
-   ```
+### Example
+When running:
 
-3. The terminal will display real-time logs and spinner animations for each command.
+```bash
+LogFusion "echo 'Hello, World!'" "ls -l"
+```
 
-## Project Structure
-- **`main.py`**: Entry point of the application, orchestrates the execution.
-- **`command_executor.py`**: Contains all the core classes (`Spinner`, `Logger`, `OutputReader`, `CommandRunner`, `CommandExecutor`).
-- **`requirements.txt`**: Lists Python dependencies.
-
-## Example Output
-When running, the terminal will show:
-- A spinner animation for the active command.
-- Logs of each command's output in real-time.
-- Color-coded success or failure messages.
-
-Example:
+The terminal output will show:
 ```
 ⠋ Running: echo 'Hello, World!'
 ✔ [Success] : echo 'Hello, World!'
+⠋ Running: ls -l
+✔ [Success] : ls -l
 ```
+
+### Programmatic Usage
+You can also use LogFusion in Python scripts:
+
+```python
+from LogFusion import LogFusion
+
+commands = ["echo 'Hello, World!'", "ls -l"]
+log_fusion = LogFusion()
+log_fusion.start(commands)
+```
+
+## Project Structure
+- **`main.py`**: Command-line entry point for the application.
+- **`LogFusion/`**: Contains core modules for logging, spinning animations, command execution, and log reading.
+- **`requirements.txt`**: Lists Python dependencies.
 
 ## Cross-Platform Compatibility
 - ANSI escape codes are used for cursor and line control.
@@ -84,4 +73,3 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## Contact
 For questions or feedback, please contact [Brahim Chifour](https://www.linkedin.com/in/brahim-chifour-639652239/).
-
