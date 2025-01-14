@@ -1,10 +1,10 @@
-from logger import Logger
-from reader import Reader
-from runner import Runner
-from spinner import Spinner
+from LogFusion.logger import Logger
+from LogFusion.reader import Reader
+from LogFusion.runner import Runner
+from LogFusion.spinner import Spinner
 import threading
 
-class Executor:
+class LogFusion:
     def __init__(self):
         self.logger = Logger()
         self.spinner = Spinner()
